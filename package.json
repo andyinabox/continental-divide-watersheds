@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server",
+    "build": "webpack",
     "geo2topo": "geo2topo data/watersheds.geojson > data/watersheds.topo.json"
   },
   "devDependencies": {
