@@ -14822,7 +14822,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var tilesUrl = '//{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png';
+var tilesUrl = 'http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png';
 var s3Url = '//s3.us-east-2.amazonaws.com/continental-divide/';
 var dataUrl = s3Url + 'data/watersheds.topo.json';
 
