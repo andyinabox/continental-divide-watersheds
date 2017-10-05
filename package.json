@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "geo2topo": "geo2topo data/watersheds.geojson > data/watersheds.topo.json"
+    "geo2topo": "geo2topo data/watersheds.geojson > data/watersheds.topo.json",
+    "deploy" : "npm run build; gh-pages -d dist"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
