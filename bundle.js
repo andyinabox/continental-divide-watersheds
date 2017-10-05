@@ -14823,6 +14823,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var tilesUrl = 'http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png';
+var s3Url = '//s3.us-east-2.amazonaws.com/continental-divide/';
+var dataUrl = s3Url + 'data/watersheds.topo.json';
 
 var featureStyles = {
   fill: false,
@@ -14841,13 +14843,13 @@ document.body.appendChild(loadingContainer);
 
 // set up map and map tile layer
 var map = Leaflet.map('map-container').setView([47.47184, -92.96549], 12);
-var tiles = new Leaflet.TileLayer(tilesUrl);
+var tiles = new Leaflet.TileLayer(tilesUrl, { attribution: 'Tiles via Stamen, watershed boundaries via USGS' });
 
 // add map tile layer
 map.addLayer(tiles);
 
 // load topojson and add tp map
-fetch('data/watersheds.topo.json').then(function (res) {
+fetch(dataUrl).then(function (res) {
   return res.json();
 }).then(function (json) {
 
